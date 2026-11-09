@@ -1,0 +1,52 @@
+{
+  "name": "dsh-session-recap",
+  "version": "0.1.0",
+  "description": "Turn any DeepSeek Harness session into a shareable recap card: turns, tools, tokens, cache hit rate and peak/off-peak cost.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "recap",
+    "tokens",
+    "cost",
+    "observability"
+  ],
+  "license": "MIT",
+  "author": "dsh-session-recap contributors",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --check client.js && node --check index.js",
+    "index": "node scripts/build-index.mjs",
+    "validate:index": "node scripts/validate-index.mjs"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-plugin-market-index": "0.2.1-alpha.4"
+  }
+}

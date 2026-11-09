@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Session recap",
+    "zh": "会话复盘卡"
+  },
+  "description": {
+    "en": "A single-bundle index for dsh-session-recap.",
+    "zh": "只收录 dsh-session-recap 的插件索引。"
+  },
+  "metadata": {
+    "categories": {
+      "insight": {
+        "title": {
+          "en": "Insights",
+          "zh": "洞察"
+        }
+      }
+    },
+    "labels": {
+      "local-only": {
+        "title": {
+          "en": "Local only",
+          "zh": "纯本地"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-session-recap",
+      "title": {
+        "en": "Session recap",
+        "zh": "会话复盘卡"
+      },
+      "description": {
+        "en": "Turn a session into a shareable recap card with tools, tokens, cache hit rate and estimated cost.",
+        "zh": "把一次会话变成一张可分享的复盘卡：工具调用、Token、缓存命中率与预估花费。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNlc3Npb24gcmVjYXAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJkc3ItYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMmY3ZGVhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFiNGJiOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9InVybCgjZHNyLWJnKSIvPgogIDxyZWN0IHg9IjEzIiB5PSIxNCIgd2lkdGg9IjM4IiBoZWlnaHQ9IjM2IiByeD0iNyIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjk2Ii8+CiAgPHJlY3QgeD0iMTkiIHk9IjIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMy40IiByeD0iMS43IiBmaWxsPSIjMWI0YmI4IiBmaWxsLW9wYWNpdHk9IjAuNzUiLz4KICA8cmVjdCB4PSIxOSIgeT0iMjgiIHdpZHRoPSIyNiIgaGVpZ2h0PSIyLjYiIHJ4PSIxLjMiIGZpbGw9IiMxYjRiYjgiIGZpbGwtb3BhY2l0eT0iMC4yOCIvPgogIDxyZWN0IHg9IjE5IiB5PSIzMy41IiB3aWR0aD0iMjYiIGhlaWdodD0iMi42IiByeD0iMS4zIiBmaWxsPSIjMWI0YmI4IiBmaWxsLW9wYWNpdHk9IjAuMjgiLz4KICA8cmVjdCB4PSIxOSIgeT0iNDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjYiIHJ4PSIxLjQiIGZpbGw9IiMyZjdkZWEiLz4KICA8cmVjdCB4PSIyNi41IiB5PSIzOCIgd2lkdGg9IjUiIGhlaWdodD0iOSIgcng9IjEuNCIgZmlsbD0iIzJmN2RlYSIgZmlsbC1vcGFjaXR5PSIwLjg1Ii8+CiAgPHJlY3QgeD0iMzQiIHk9IjM0LjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjEyLjUiIHJ4PSIxLjQiIGZpbGw9IiMyZjdkZWEiIGZpbGwtb3BhY2l0eT0iMC43Ii8+CiAgPGNpcmNsZSBjeD0iNDQiIGN5PSIxOSIgcj0iNC42IiBmaWxsPSIjMjJjMDhhIi8+CiAgPHBhdGggZD0iTTQxLjkgMTkuMWwxLjUgMS42IDMtMy4zIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==",
+      "author": "dsh-session-recap contributors",
+      "metadata": {
+        "category": "insight",
+        "keywords": [
+          "dsh-plugin",
+          "deepseek-harness",
+          "session",
+          "recap",
+          "tokens",
+          "cost",
+          "observability"
+        ],
+        "labels": [
+          "local-only"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1794220028,
+          "source": {
+            "type": "npm"
+          }
+        }
+      ]
+    }
+  ]
+}
