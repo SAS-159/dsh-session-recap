@@ -53,13 +53,16 @@
 
 ## 3. 上架路线（四步，第 1 步需要你的账号）
 
-### 第 1 步：推到 GitHub
+### 第 1 步：推到 GitHub（唯一需要你登录的一步）
 
 ```bash
-# 仓库已在本地 git init 并提交，只需加远程
+# 只需在网页上创建一次空仓库，然后：
+cd dsh-session-recap
 git remote add origin https://github.com/<owner>/dsh-session-recap.git
-git push -u origin main
+node scripts/release.mjs
 ```
+
+`release.mjs` 会自动 push、按真实 owner 生成收录文件，并打印一条**已预填内容**的 GitHub "新建文件"链接——打开、点两次按钮就是 PR。
 
 硬性要求（来自官方贡献指南，CI 会查）：
 
@@ -68,19 +71,18 @@ git push -u origin main
 - `package.json` 声明 `dsh.bundle`，根目录有 `cordis.patch.yml`（本仓库已满足）
 - 图标是 GitHub 托管的位图：用 `assets/icon-180.png`（SVG 不被接受）
 
-### 第 2 步：发布 npm
+### 第 2 步：发布 npm（可选）
+
+市场条目**不要求 npm**：收录列表里大量条目用 `github:owner/repo` 直接安装，本包没有构建步骤，git 安装即可用。要发 npm 只是为了让安装更快、可版本锁定：
 
 ```bash
-npm login
-npm publish --access public
+node scripts/release.mjs --npm   # 未登录会明确提示 npm login，不会静默失败
 ```
-
-市场条目不写版本号，但安装走 npm；先有包，条目才装得上。
 
 ### 第 3 步：PR 到 awesome-dsh-plugin
 
-把 `submission/awesome-dsh-plugin.template.yml` 复制成
-`data/plugins/<owner>__dsh-session-recap.yml`，替换 `<owner>`，提 PR。
+`release.mjs` 打印的链接已经带好文件名和内容（`?filename=…&value=…`）：
+打开 → **Propose changes** → **Create pull request**，就完成投稿。
 一个文件就是全部投稿，合并后站点与 `dshmarket` 通常一天内自动收录。
 详见 [`submission/README.md`](submission/README.md)。
 
@@ -141,9 +143,25 @@ npm publish --access public
 
 ---
 
-## 7. 你还需要做的四件事
+## 7. 你还需要做的两件事
 
 1. 真机打开任意会话，确认「复盘卡」胶囊出现且点击正常；样式有问题告诉我，我改。
-2. 建 GitHub 仓库并 push，加 `dsh-plugin` topic，等满 1 天。
-3. `npm publish`（需要账号；包名被占就改名并重跑 `pnpm run index`）。
-4. PR 到 awesome-dsh-plugin；官方扶持表单开放时用第 4 节文案提交，附第 5 节的三张截图。
+2. 在 GitHub 建一个空仓库并 `git remote add origin`，然后运行 `node scripts/release.mjs`——
+   之后 push、收录文件、PR 链接全自动。顺带在仓库 Topics 里加 `dsh-plugin`，等满 1 天再提 PR。
+
+除此之外不需要你介入：npm 可以不发；官方扶持表单开放时我会先把文案与附件清单更新好。
+
+---
+
+## 8. 自动巡检
+
+`scripts/watch.mjs` 每 12 小时由本会话自动跑一次（10:00 / 22:00 Asia/Shanghai），检查三处：
+
+| 目标 | 为什么盯它 |
+|---|---|
+| `deepseek-ai/deepseek-harness` 的 release notes | 官方市场、插件索引、扶持计划的公告会先出现在这里（0.2.2 就刚把「自定义插件市场」更名为「自定义插件索引」） |
+| Hacker News 上提及 DeepSeek Harness 的新帖 | 第三方报道往往早于官方渠道 |
+| npm 上 `dsh-session-recap` 的状态 | 名字是否仍空着、是否已发布 |
+
+无变化时只回一行；有变化且与"市场 / 索引 / 扶持 / 赠助"相关时，我会直接更新本手册的过时事实并给出下一步动作，不向你提问。
+`.state/watch.json` 保存上一次快照，已加入 `.gitignore`。

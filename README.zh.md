@@ -101,6 +101,8 @@ npm publish --access public
 pnpm run check          # 对两端做 node --check
 pnpm run index          # 重新生成 market/index.json
 pnpm run validate:index # 用 @deepseek-ai/dsh-plugin-market-index 校验
+pnpm run watch          # 巡检官方 release notes、Hacker News 与 npm 状态
+pnpm run release        # 推送、生成收录条目、打印预填好的 PR 链接
 ```
 
 ## 许可

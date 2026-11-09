@@ -44,7 +44,9 @@
   "scripts": {
     "check": "node --check client.js && node --check index.js",
     "index": "node scripts/build-index.mjs",
-    "validate:index": "node scripts/validate-index.mjs"
+    "validate:index": "node scripts/validate-index.mjs",
+    "watch": "node scripts/watch.mjs",
+    "release": "node scripts/release.mjs"
   },
   "devDependencies": {
     "@deepseek-ai/dsh-plugin-market-index": "0.2.1-alpha.4"

@@ -102,6 +102,8 @@ The plugin reads only what the page already holds for the open session and rende
 pnpm run check          # node --check on both halves
 pnpm run index          # rebuild market/index.json
 pnpm run validate:index # validate with @deepseek-ai/dsh-plugin-market-index
+pnpm run watch          # report changes in the official release notes, HN, and npm
+pnpm run release        # push, generate the catalog entry, print a prefilled PR link
 ```
 
 ## License
