@@ -16,6 +16,7 @@ import { execFileSync } from 'node:child_process'
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buildEntry, entryFileName } from './catalog-entry.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'))
@@ -57,23 +58,8 @@ else {
   process.exit(1)
 }
 
-const description = {
-  en: 'Adds a recap card under the composer for the current session: turns, steps, tool calls grouped by name, the uncached / cache-read / cache-write / output token split, the cache-hit rate, and a cost range computed from the official Flash off-peak and peak list prices. Exports the same card as Markdown or a standalone HTML page.',
-  zh: '在输入框下方为当前会话生成复盘卡：轮次、步数、按名称聚合的工具调用、未缓存 / 缓存读 / 缓存写 / 输出四段 Token、缓存命中率，以及按官网 Flash 峰谷挂牌价折算的花费区间；同一张卡可导出为 Markdown 或独立 HTML。',
-}
-
-const entry = [
-  `url: https://github.com/${owner}/${pkg.name}`,
-  `name: ${owner}/${pkg.name}`,
-  'category: usage',
-  'description:',
-  `  en: '${description.en}'`,
-  `  zh: '${description.zh}'`,
-  `icon: https://raw.githubusercontent.com/${owner}/${pkg.name}/main/assets/icon-180.png`,
-  '',
-].join('\n')
-
-const fileName = `${owner}__${pkg.name}.yml`
+const entry = buildEntry(owner, pkg.name)
+const fileName = entryFileName(owner, pkg.name)
 await mkdir(join(root, 'submission'), { recursive: true })
 await writeFile(join(root, 'submission', fileName), entry, 'utf8')
 console.log(`entry: submission/${fileName}`)

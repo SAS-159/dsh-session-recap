@@ -13,9 +13,20 @@
 - [ ] 图标是 GitHub 托管的**位图**（本仓库 `assets/icon-180.png`；SVG 不行）
 - [ ] 描述属实、不带营销词（维护者会对着代码核对）
 
-## 五步
+## 自动模式（推荐）
 
-1. 在 GitHub 新建仓库 `dsh-session-recap`，把本目录推上去（已在本地 `git init` 并提交过，加 remote 后直接 push）。
+把 GitHub PAT（只勾 `repo`）存成 `C:\Users\26831\.dsh\github-token.txt`，然后：
+
+```bash
+node scripts/auto-release.mjs --check   # 只读，报告会做什么
+node scripts/auto-release.mjs           # 建仓库、push、fork、写条目、开 PR
+```
+
+排程任务每 12 小时会自动跑一次；仓库未满 24 小时时只推代码，满 24 小时后的下一次自动开 PR。
+
+## 手动模式
+
+1. 在 GitHub 新建仓库 `dsh-session-recap`，把本目录推上去。
 2. 仓库 Settings → Topics 添加 `dsh-plugin`。
 3. Fork <https://github.com/awesome-dsh-plugin/awesome-dsh-plugin>。
 4. 把 `submission/awesome-dsh-plugin.template.yml` 复制为

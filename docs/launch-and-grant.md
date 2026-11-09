@@ -53,21 +53,35 @@
 
 ## 3. 上架路线（四步，第 1 步需要你的账号）
 
-### 第 1 步：推到 GitHub（唯一需要你登录的一步）
+### 第 1 步：推到 GitHub（零介入模式）
 
-```bash
-# 只需在网页上创建一次空仓库，然后：
-cd dsh-session-recap
-git remote add origin https://github.com/<owner>/dsh-session-recap.git
-node scripts/release.mjs
+把 GitHub PAT（只勾 `repo`）保存为纯文本文件：
+
+```
+C:\Users\26831\.dsh\github-token.txt
 ```
 
-`release.mjs` 会自动 push、按真实 owner 生成收录文件，并打印一条**已预填内容**的 GitHub "新建文件"链接——打开、点两次按钮就是 PR。
+之后**不需要任何操作**：排程任务每 12 小时会跑一次 `node scripts/auto-release.mjs`，
+它会自动完成 建仓库 → 设 `dsh-plugin` topic → push → fork 目录仓库 → 写入收录文件 → 开 PR。
+仓库创建未满 24 小时时它只推代码、不建 PR，等下一次排程自动补上（CI 硬性要求满 1 天）。
+
+手动触发（可选）：
+
+```bash
+node scripts/auto-release.mjs --check   # 只读：报告会做什么
+node scripts/auto-release.mjs           # 真正执行
+```
+
+token 不进 `.git/config`、不进 URL、不打印：push 用临时 `http.extraheader`，进程结束即失效。
+不想再用时删掉该文件即可。
+
+**替代方案**（不想放 token）：网页建一个空仓库 → `git remote add origin …` →
+`node scripts/release.mjs`，它会 push 并打印预填好的 PR 链接。
 
 硬性要求（来自官方贡献指南，CI 会查）：
 
 - 仓库**创建满 1 天**（防"PR 前几分钟新建"）
-- 带 `dsh-plugin` topic（仓库 Settings → Topics）
+- 带 `dsh-plugin` topic（自动模式下脚本会设）
 - `package.json` 声明 `dsh.bundle`，根目录有 `cordis.patch.yml`（本仓库已满足）
 - 图标是 GitHub 托管的位图：用 `assets/icon-180.png`（SVG 不被接受）
 
@@ -143,13 +157,12 @@ node scripts/release.mjs --npm   # 未登录会明确提示 npm login，不会�
 
 ---
 
-## 7. 你还需要做的两件事
+## 7. 你只需要做一件事
 
-1. 真机打开任意会话，确认「复盘卡」胶囊出现且点击正常；样式有问题告诉我，我改。
-2. 在 GitHub 建一个空仓库并 `git remote add origin`，然后运行 `node scripts/release.mjs`——
-   之后 push、收录文件、PR 链接全自动。顺带在仓库 Topics 里加 `dsh-plugin`，等满 1 天再提 PR。
+把 PAT 写进 `C:\Users\26831\.dsh\github-token.txt`（只勾 `repo`）。
 
-除此之外不需要你介入：npm 可以不发；官方扶持表单开放时我会先把文案与附件清单更新好。
+之后全部自动：12 小时一次的排程会建仓库、推代码、设 topic，满 24 小时后自动 fork 目录仓库、写入条目并开 PR。
+真机视觉确认是可选项——胶囊已经在 `conversation.composer.dock` 里 active，只有像素级样式需要你眼睛看一眼，不看也不影响上架。
 
 ---
 

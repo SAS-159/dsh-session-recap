@@ -104,6 +104,7 @@ pnpm run index          # rebuild market/index.json
 pnpm run validate:index # validate with @deepseek-ai/dsh-plugin-market-index
 pnpm run watch          # report changes in the official release notes, HN, and npm
 pnpm run release        # push, generate the catalog entry, print a prefilled PR link
+pnpm run release:auto   # token-based: create repo, push, fork, write entry, open PR
 ```
 
 ## License
