@@ -35,10 +35,17 @@
 
 ### 本地目录安装
 
+```bash
+pnpm install
+pnpm run build        # src/*.tsx -> dist/client.js + dist/index.js
+```
+
 ```js
 // plugin_manager
 { "action": "install_bundle", "target": "<本目录的绝对路径>" }
 ```
+
+`dist/` 已提交进仓库，所以 `github:` 安装不需要构建步骤。改代码请改 `src/`，不要改 `dist/`。
 
 ### 通过社区市场上架
 

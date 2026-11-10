@@ -35,10 +35,17 @@ It answers a question every agent user eventually asks: *what did this session a
 
 ### From a local checkout
 
+```bash
+pnpm install
+pnpm run build        # src/*.tsx -> dist/client.js + dist/index.js
+```
+
 ```js
 // plugin_manager
 { "action": "install_bundle", "target": "<absolute path to this directory>" }
 ```
+
+`dist/` is committed so a `github:` install works without a build step. Edit `src/`, not `dist/`.
 
 ### From the community market
 

@@ -1,0 +1,53 @@
+.dsr-pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;
+border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);
+color:var(--dsw-alias-label-secondary);font-size:12px;line-height:1;cursor:pointer;
+transition:background .15s ease,color .15s ease,border-color .15s ease}
+.dsr-pill:hover{background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-primary);border-color:var(--dsw-alias-border-l2)}
+.dsr-pill:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:2px}
+.dsr-pill svg{display:block}
+.dsr-backdrop{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;
+padding:24px;background:rgba(9,14,24,.42);backdrop-filter:blur(2px)}
+.dsr-modal{width:min(520px,100%);max-height:min(86vh,760px);overflow:auto;border-radius:16px;
+background:var(--dsw-alias-bg-overlay);color:var(--dsw-alias-label-primary);
+border:1px solid var(--dsw-alias-border-l1);box-shadow:0 24px 64px rgba(6,10,20,.34);
+font-family:inherit;font-size:13px;line-height:1.5}
+.dsr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:18px 20px 12px}
+.dsr-title{margin:0;font-size:15px;font-weight:600;letter-spacing:.01em}
+.dsr-sub{margin:2px 0 0;color:var(--dsw-alias-label-secondary);font-size:12px}
+.dsr-x{border:0;background:transparent;color:var(--dsw-alias-label-secondary);cursor:pointer;
+border-radius:8px;width:28px;height:28px;font-size:16px;line-height:1}
+.dsr-x:hover{background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-primary)}
+.dsr-body{padding:0 20px 18px}
+.dsr-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.dsr-cell{padding:10px 10px 9px;border-radius:10px;background:var(--dsw-alias-bg-layer-1);
+border:1px solid var(--dsw-alias-border-l1)}
+.dsr-k{font-size:11px;color:var(--dsw-alias-label-secondary);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dsr-v{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.dsr-sec{margin-top:14px}
+.dsr-secT{font-size:11px;color:var(--dsw-alias-label-secondary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.dsr-bar{display:flex;height:8px;border-radius:999px;overflow:hidden;background:var(--dsw-alias-bg-layer-2)}
+.dsr-bar span{display:block;height:100%}
+.dsr-seg-cache{background:var(--dsw-alias-brand-primary)}
+.dsr-seg-in{background:var(--dsw-alias-state-idle-primary);opacity:.55}
+.dsr-seg-write{background:var(--dsw-alias-state-warn-primary);opacity:.8}
+.dsr-seg-out{background:var(--dsw-alias-state-success-primary)}
+.dsr-legend{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:8px;font-size:12px;color:var(--dsw-alias-label-secondary)}
+.dsr-legend b{color:var(--dsw-alias-label-primary);font-weight:600;font-variant-numeric:tabular-nums}
+.dsr-dot{display:inline-block;width:7px;height:7px;border-radius:2px;margin-right:5px;vertical-align:1px}
+.dsr-tools{display:flex;flex-direction:column;gap:4px}
+.dsr-tool{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:3px 0;
+border-bottom:1px dashed var(--dsw-alias-border-l1)}
+.dsr-tool:last-child{border-bottom:0}
+.dsr-tool code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.dsr-num{color:var(--dsw-alias-label-secondary);font-variant-numeric:tabular-nums}
+.dsr-cost{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--dsw-alias-bg-layer-1);
+border:1px solid var(--dsw-alias-border-l1)}
+.dsr-costV{font-size:20px;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.dsr-costN{margin-top:3px;font-size:11px;color:var(--dsw-alias-label-secondary)}
+.dsr-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.dsr-btn{appearance:none;border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);
+color:var(--dsw-alias-label-primary);border-radius:9px;height:30px;padding:0 12px;font-size:12px;cursor:pointer}
+.dsr-btn:hover{background:var(--dsw-alias-bg-layer-2)}
+.dsr-btn.primary{background:var(--dsw-alias-brand-primary);border-color:transparent;color:#fff}
+.dsr-btn.primary:hover{filter:brightness(1.06)}
+.dsr-foot{margin-top:12px;font-size:11px;color:var(--dsw-alias-label-secondary)}
