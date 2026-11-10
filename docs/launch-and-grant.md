@@ -168,7 +168,7 @@ node scripts/release.mjs --npm   # 未登录会明确提示 npm login，不会�
 
 ## 8. 自动巡检
 
-`scripts/watch.mjs` 每 12 小时由本会话自动跑一次（10:00 / 22:00 Asia/Shanghai），检查三处：
+`scripts/watch.mjs` 每天 22:00 由本会话自动跑一次，检查三处：
 
 | 目标 | 为什么盯它 |
 |---|---|
