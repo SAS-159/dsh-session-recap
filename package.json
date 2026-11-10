@@ -50,7 +50,7 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node ../dsh-plugin-kit/bin/cli.mjs check . --types",
+    "check": "tsc -p tsconfig.json",
     "index": "node scripts/build-index.mjs",
     "validate:index": "node scripts/validate-index.mjs",
     "watch": "node scripts/watch.mjs",
