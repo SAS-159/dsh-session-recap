@@ -1,7 +1,7 @@
 # 会话复盘卡 · 上架与扶持计划申请手册
 
 > 面向：DeepSeek Harness 插件作者扶持计划（2026-11-08 公布，细则待定）
-> 现状（2026-11-10）：仓库已上线 <https://github.com/SAS-159/dsh-session-recap>；市场仓库的 fork 与条目文件已写入；PR 因仓库未满 24 小时而暂缓，2026-11-11 16:51 后的那次巡检会自动开；官方扶持细则仍未公布。
+> 现状（2026-11-12）：**已收录进社区市场**——PR #14358 合并、两项 CI 全绿，目录页 <https://awesome-dsh-plugin.com/p/SAS-159/dsh-session-recap/> 已可访问，`plugins.json` 已包含该条目；本机插件运行中且源码已迁到 TypeScript；官方扶持细则仍未公布。
 
 ---
 
